@@ -1374,6 +1374,7 @@ class NameScopingTest(keras_parameterized.TestCase):
     model = training_lib.Model(inputs, outputs)
     node_names = self._get_model_node_names(model, np.random.random((1, 3)),
                                             'call_scope')
+    print('Node names', node_names)
     self.assertListEqual(node_names, [
         'call_scope/Const',
         'call_scope/model/Cast',
